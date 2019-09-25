@@ -1,0 +1,240 @@
+body{
+	margin: 0 auto;
+}
+
+ul{
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+input{
+	padding: 0;
+	margin: 0;
+	border: none;
+	outline: none;
+	background-color: transparent;
+}
+
+.box{
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	width: 1200px;
+	height: 500px;
+	margin: auto;
+}
+
+.box>div{
+	float: left;
+	height: 460px;
+	padding: 20px;
+}
+
+.box>div.left{
+	width: 160px;
+	background-color: #f8f8f8;
+}
+
+.box>div.left>.add{
+	width: 160px;
+	height: 40px;
+	margin: 0 auto;
+	background-color: #F25D05;
+	border-radius: 8px;
+	cursor: pointer;
+	border-bottom: 3px solid #AF4303;
+	text-align: center;
+	color: #fff;
+	line-height: 40px;
+	font-size: 18px;
+	user-select: none;
+}
+
+.box>div.left>.add:active{
+	border-bottom: none;
+}
+
+.box>div.box-child{
+	width: 460px;
+}
+
+.box>div.middle{
+	background-color: #f5f5f5;
+	overflow-y: auto; 
+}
+
+.box>div.right{
+	background-color: #f2f2f2;
+	overflow-y: auto;
+}
+
+.writer{
+	background-color: #fff;
+	border-radius: 8px;
+}
+
+.writer>input{
+	width: calc(100% - 20px);
+	display: block;
+	height: 40px;
+	padding: 0 10px;
+}
+
+.w{
+	margin-top: 20px;
+}
+
+textarea{
+	display: block;
+	outline: none;
+	border: none;
+	resize: none;
+	background-color: transparent;
+	width: calc(100% - 20px);
+	height: 240px;
+	padding: 10px;
+	font-size: 14px;
+	font-family: '微软雅黑';
+}
+
+.submit{
+	width: 160px;
+	height: 40px;
+	background-image: linear-gradient(to right, #F78946 0%, #F56F1A 100%);
+	border-radius: 8px;
+	margin: 20px auto 0;
+	color: #fff;
+	text-align: center;
+	line-height: 40px;
+	font-size: 18px;
+	letter-spacing: 3px;
+	cursor: pointer;
+}
+
+.submit:hover{
+	background-image: linear-gradient(to right, #F56F1A 0%, #BC4D08 100%);
+}
+
+.item{
+	padding: 10px;
+	background-color: #fff;
+	box-shadow: 3px 3px 5px 1px #999;
+}
+
+.item>.t{
+	font-size: 12px;
+	color: #999;
+	overflow: hidden;
+	padding: 10px 0;
+}
+
+.item>.t>span{
+	float: left;
+}
+
+.item>.t>span.read{
+	margin-left: 20px;
+}
+
+.item>.b{
+	overflow: hidden;
+}
+
+.item>.b>div.l{
+	float: left;
+	font-size: 14px;
+	overflow: hidden;
+	color: #666;
+}
+
+.item>.b>div.l>div{
+	float: left;
+}
+
+.item>.b>div.r{
+	float: right;
+}
+
+.one-text{
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.name{
+	max-width: 75px;
+}
+
+.content{
+	max-width: 170px;
+}
+
+.item{
+	border-radius: 8px;
+	margin-bottom: 20px;
+}
+
+.item>.b>div.r>span{
+	float: left;
+	font-size: 12px;
+	color: #fff;
+	padding: 0 5px;
+	cursor: pointer;
+	border-radius: 3px;
+}
+
+.item>.b>div.r>span:nth-child(1){
+	background-color: #7AD02B;
+	margin-right: 10px;
+}
+
+.item>.b>div.r>span:nth-child(2){
+	background-color: #088EF7;
+	margin-right: 10px;
+}
+
+.item>.b>div.r>span:nth-child(3){
+	background-color: #F22E1C;
+}
+
+.add-edit{
+	display: none;
+}
+
+.reading{
+	display: none;
+}
+
+.reading>.time{
+	color: #999;
+	font-size: 12px;
+}
+
+.author>span{
+	color: #888;
+}
+
+.author{
+	color: #666;
+	font-size: 14px;
+}
+
+.author-content>.main{
+	text-indent: 28px;
+	color: #888;
+}
+
+.item>.title{
+	font-size: 12px;
+	color: #aaa;
+	margin-bottom: 10px;
+}
+
+.reading>.title{
+	font-size: 12px;
+	color: #aaa;
+	margin-top: 20px;
+}

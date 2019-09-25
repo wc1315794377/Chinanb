@@ -1,0 +1,39 @@
+/* 重置浏览器默认样式 */
+body{
+  margin: 0 auto;
+}
+
+p{
+  margin: 0;
+}
+
+ul{
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+input{
+  border: none;
+  outline: none;
+  padding: 0;
+  background-color: transparent;
+}
+
+/* 预设样式 */
+.fl{
+  float: left;
+}
+
+.fr{
+  float: right;
+}
+
+.clearfix{
+  overflow: hidden;
+}
+
+.auto-img{
+  width: 100%;
+  display: block;
+}

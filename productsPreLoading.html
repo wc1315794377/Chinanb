@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    body {
+      margin: 0 auto;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    p {
+      margin: 0;
+    }
+
+    .auto-img {
+      width: 100%;
+      display: block;
+    }
+
+    .box {
+      width: 1200px;
+      margin: 0 auto;
+      border: 1px solid #e4393c
+    }
+
+    .list {
+      overflow: hidden;
+      padding: 10px 10px 0;
+    }
+
+    .list>li {
+      float: left;
+      width: 287.5px;
+      box-shadow: 2px 2px 10px 1px #ddd;
+      margin-right: 10px;
+      margin-bottom: 10px;
+    }
+
+    .list>li:nth-child(4n) {
+      margin-right: 0;
+    }
+
+    .title {
+      margin-top: 20px;
+      font-size: 18px;
+      color: #444;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      white-space: nowrap;
+    }
+
+    .info {
+      padding: 10px;
+    }
+
+    .price {
+      overflow: hidden;
+    }
+
+    .price>span {
+      float: left;
+      margin-top: 10px;
+    }
+
+    .origin {
+      color: #e4393c;
+      font-weight: bold;
+    }
+
+    .vip {
+      color: #DEAA0A;
+      font-size: 13px;
+      margin-left: 30px;
+      line-height: 21px;
+    }
+
+    .notvip {
+      display: none;
+    }
+
+    .remove {
+      margin: 20px auto 0;
+      width: 200px;
+      height: 34px;
+      border: 1px solid #ddd;
+      text-align: center;
+      line-height: 34px;
+      border-radius: 10px;
+      color: #444;
+      cursor: pointer;
+    }
+
+    .price>.add {
+      float: right;
+      font-size: 12px;
+      padding: 2px 4px;
+      color: #fff;
+      background-color: #DEAA0A;
+      border-radius: 2px;
+      cursor: pointer;
+    }
+
+    .shopcart {
+      position: fixed;
+      bottom: 0;
+      top: 0;
+      right: 10px;
+      margin: auto 0;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      text-align: center;
+      line-height: 60px;
+      background-color: #e4393c;
+      color: #fff;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="box">
+    <ul class="list"></ul>
+
+    <div class="shopcart">0</div>
+  </div>
+
+  <script>
+
+    window.onload = function () {
+
+      var allProducts = [
+
+        {
+          name: '美国LA MER海蓝之谜奢华护肤专场',
+          price: 1988,
+          url: 'http://c.vpimg1.com/upcb/2019/03/19/57/ias_155297740486444_570x273_90.jpg',
+          vip: true,
+          vipPirce: 877
+        },
+
+        {
+          name: '水之蔻Water come护肤品专场',
+          price: 688,
+          url: 'http://c.vpimg1.com/upcb/2019/06/13/151/ias_156039645558979_570x273_90.jpg',
+          vip: false,
+          vipPirce: 0
+        },
+
+        {
+          name: "科颜氏Kiehl's化妆品专场",
+          price: 977,
+          url: 'http://c.vpimg1.com/upcb/2019/07/12/88/ias_156292408244680_570x273_90.jpg',
+          vip: true,
+          vipPirce: 887
+        },
+        {
+          name: 'Milli Millu女装-盛夏好货直降专场',
+          price: 543,
+          url: 'https://c.vpimg1.com/upcb/2019/07/19/69/ias_156351435910137_570x273_90.jpg',
+          vip: false,
+          vipPirce: 0
+        },
+
+        {
+          name: '珂尼蒂思CONATUS女装专场',
+          price: 4365,
+          url: 'https://d.vpimg1.com/upcb/2019/07/11/138/ias_156283741123349_570x273_90.jpg',
+          vip: false,
+          vipPirce: 0
+        },
+
+        {
+          name: "集美极美-精品女装特卖专场",
+          price: 861,
+          url: 'https://c.vpimg1.com/upcb/2019/07/18/31/ias_156344451547647_570x273_90.jpg',
+          vip: true,
+          vipPirce: 772
+        },
+
+        {
+          name: "卡柏迪CHICABOOTI女装好货直降专场",
+          price: 997,
+          url: 'https://c.vpimg1.com/upcb/2019/07/03/9/ias_156212164093440_570x273_90.jpg',
+          vip: true,
+          vipPirce: 592
+        },
+
+        {
+          name: "爱帝I'd男女内衣混合专场",
+          price: 884,
+          url: 'https://c.vpimg1.com/upcb/2019/07/16/8/ias_156327118639331_570x273_90.jpg',
+          vip: false,
+          vipPirce: 0
+        },
+
+        {
+          name: "千百怡恋女装-最后疯抢专场",
+          price: 284,
+          url: 'https://c.vpimg1.com/upcb/2019/07/29/104/ias_156436558253793_570x273_90.jpg',
+          vip: false,
+          vipPirce: 0
+        },
+
+        {
+          name: "韩彩HACAI家居服专场",
+          price: 426,
+          url: 'https://d.vpimg1.com/upcb/2019/05/31/114/ias_155927842934050_570x273_90.jpg',
+          vip: true,
+          vipPirce: 398
+        },
+
+        {
+          name: "花样女裤 穿搭攻略",
+          price: 521,
+          url: 'https://c.vpimg1.com/upcb/2019/07/17/52/ias_156335234942993_570x273_90.jpg',
+          vip: true,
+          vipPirce: 246
+        },
+
+        {
+          name: "音卓韩范女装 惊喜直降专场",
+          price: 879,
+          url: 'https://d.vpimg1.com/upcb/2019/06/27/186/ias_156163501663969_570x273_90.jpg',
+          vip: false,
+          vipPirce: 0
+        },
+
+        {
+          name: "Cendile皮草大衣超值闪购女装专场",
+          price: 536,
+          url: 'https://c.vpimg1.com/upcb/2019/06/28/175/ias_156169057088584_570x273_90.jpg',
+          vip: false,
+          vipPirce: 0
+        },
+
+        {
+          name: "新入驻-CC&DD女装专场",
+          price: 736,
+          url: 'https://d.vpimg1.com/upcb/2019/07/29/139/ias_156439009714402_570x273_90.jpg',
+          vip: true,
+          vipPirce: 698
+        },
+
+        {
+          name: "東品廊焕新女裤专场",
+          price: 546,
+          url: 'https://d.vpimg1.com/upcb/2019/07/11/138/ias_156281462063927_570x273_90.jpg',
+          vip: true,
+          vipPirce: 366
+        },
+
+        {
+          name: "THE NEXT甜美少女初秋尚新专场",
+          price: 843,
+          url: 'https://c.vpimg1.com/upcb/2019/07/17/14/ias_156335391912134_570x273_90.jpg',
+          vip: false,
+          vipPirce: 0
+        },
+
+        {
+          name: "千百怡恋女装-最后疯抢专场",
+          price: 284,
+          url: 'https://c.vpimg1.com/upcb/2019/07/29/104/ias_156436558253793_570x273_90.jpg',
+          vip: false,
+          vipPirce: 0
+        },
+
+        {
+          name: "韩彩HACAI家居服专场",
+          price: 426,
+          url: 'https://d.vpimg1.com/upcb/2019/05/31/114/ias_155927842934050_570x273_90.jpg',
+          vip: true,
+          vipPirce: 398
+        },
+
+        {
+          name: "花样女裤 穿搭攻略",
+          price: 521,
+          url: 'https://c.vpimg1.com/upcb/2019/07/17/52/ias_156335234942993_570x273_90.jpg',
+          vip: true,
+          vipPirce: 246
+        },
+
+        {
+          name: "音卓韩范女装 惊喜直降专场",
+          price: 879,
+          url: 'https://d.vpimg1.com/upcb/2019/06/27/186/ias_156163501663969_570x273_90.jpg',
+          vip: false,
+          vipPirce: 0
+        },
+
+        {
+          name: "Cendile皮草大衣超值闪购女装专场",
+          price: 536,
+          url: 'https://c.vpimg1.com/upcb/2019/06/28/175/ias_156169057088584_570x273_90.jpg',
+          vip: false,
+          vipPirce: 0
+        },
+
+        {
+          name: "新入驻-CC&DD女装专场",
+          price: 736,
+          url: 'https://d.vpimg1.com/upcb/2019/07/29/139/ias_156439009714402_570x273_90.jpg',
+          vip: true,
+          vipPirce: 698
+        },
+
+        {
+          name: '美国LA MER海蓝之谜奢华护肤专场',
+          price: 1988,
+          url: 'http://c.vpimg1.com/upcb/2019/03/19/57/ias_155297740486444_570x273_90.jpg',
+          vip: true,
+          vipPirce: 877
+        },
+
+        {
+          name: '水之蔻Water come护肤品专场',
+          price: 688,
+          url: 'http://c.vpimg1.com/upcb/2019/06/13/151/ias_156039645558979_570x273_90.jpg',
+          vip: false,
+          vipPirce: 0
+        },
+
+        {
+          name: "科颜氏Kiehl's化妆品专场",
+          price: 977,
+          url: 'http://c.vpimg1.com/upcb/2019/07/12/88/ias_156292408244680_570x273_90.jpg',
+          vip: true,
+          vipPirce: 887
+        },
+        {
+          name: 'Milli Millu女装-盛夏好货直降专场',
+          price: 543,
+          url: 'https://c.vpimg1.com/upcb/2019/07/19/69/ias_156351435910137_570x273_90.jpg',
+          vip: false,
+          vipPirce: 0
+        },
+
+        {
+          name: '珂尼蒂思CONATUS女装专场',
+          price: 4365,
+          url: 'https://d.vpimg1.com/upcb/2019/07/11/138/ias_156283741123349_570x273_90.jpg',
+          vip: false,
+          vipPirce: 0
+        },
+
+        {
+          name: "集美极美-精品女装特卖专场",
+          price: 861,
+          url: 'https://c.vpimg1.com/upcb/2019/07/18/31/ias_156344451547647_570x273_90.jpg',
+          vip: true,
+          vipPirce: 772
+        },
+
+        {
+          name: "卡柏迪CHICABOOTI女装好货直降专场",
+          price: 997,
+          url: 'https://c.vpimg1.com/upcb/2019/07/03/9/ias_156212164093440_570x273_90.jpg',
+          vip: true,
+          vipPirce: 592
+        },
+
+        {
+          name: "爱帝I'd男女内衣混合专场",
+          price: 884,
+          url: 'https://c.vpimg1.com/upcb/2019/07/16/8/ias_156327118639331_570x273_90.jpg',
+          vip: false,
+          vipPirce: 0
+        },
+
+        {
+          name: "音卓韩范女装 惊喜直降专场",
+          price: 879,
+          url: 'https://d.vpimg1.com/upcb/2019/06/27/186/ias_156163501663969_570x273_90.jpg',
+          vip: false,
+          vipPirce: 0
+        },
+
+        {
+          name: "Cendile皮草大衣超值闪购女装专场",
+          price: 536,
+          url: 'https://c.vpimg1.com/upcb/2019/06/28/175/ias_156169057088584_570x273_90.jpg',
+          vip: false,
+          vipPirce: 0
+        },
+
+        {
+          name: "新入驻-CC&DD女装专场",
+          price: 736,
+          url: 'https://d.vpimg1.com/upcb/2019/07/29/139/ias_156439009714402_570x273_90.jpg',
+          vip: true,
+          vipPirce: 698
+        },
+
+        {
+          name: "東品廊焕新女裤专场",
+          price: 546,
+          url: 'https://d.vpimg1.com/upcb/2019/07/11/138/ias_156281462063927_570x273_90.jpg',
+          vip: true,
+          vipPirce: 366
+        },
+
+        {
+          name: "THE NEXT甜美少女初秋尚新专场",
+          price: 843,
+          url: 'https://c.vpimg1.com/upcb/2019/07/17/14/ias_156335391912134_570x273_90.jpg',
+          vip: false,
+          vipPirce: 0
+        },
+
+        {
+          name: "千百怡恋女装-最后疯抢专场",
+          price: 284,
+          url: 'https://c.vpimg1.com/upcb/2019/07/29/104/ias_156436558253793_570x273_90.jpg',
+          vip: false,
+          vipPirce: 0
+        }
+
+
+      ];
+
+      //开始截取下标
+      var start = 0;
+
+      //初始化截取最后一个商品下标
+      var end = 20;
+
+      //初始化20个商品
+      var products = allProducts.slice(start, end);
+
+      start += end;
+
+      //获取ul
+      var list = document.getElementsByClassName('list')[0];
+
+      //根据数据创建li
+      function createLiForData(products) {
+
+        for (var i = 0; i < products.length; i++) {
+          //创建li
+          var li = document.createElement('li');
+
+          var str = `<div>
+            <img class="auto-img" src="${products[i].url}" alt="">
+          </div>
+          <div class="info">
+            <p class="title">${products[i].name}</p>
+            <p class="price">
+              <span class="origin">&yen;${products[i].price}</span>
+              <span class="vip ${products[i].vip ? '' : 'notvip'}">vip: &yen;${products[i].vipPirce}</span>
+              <span class="add">加入购物车</span>
+            </p>
+            <div class="remove">删除</div>
+          </div>`;
+
+          //将str作为li的html内容
+          li.innerHTML = str;
+
+          //移除商品点击事件
+          li.querySelector('.remove').onclick = function () {
+            //this指向.remove元素
+            //移除父级元素li
+            this.parentNode.parentNode.remove();
+          }
+
+          //加入购物车点击事件
+          li.querySelector('.add').onclick = function () {
+            //获取购物车元素
+            var shopcart = document.getElementsByClassName('shopcart')[0];
+
+            var text = Number(shopcart.textContent);
+
+            shopcart.textContent = ++text;
+
+            //购物车抖动
+            var timer = setInterval(function () {
+              //获取购物车元素的top
+              var top = parseFloat(getComputedStyle(shopcart).top);
+              if (top <= -10) {
+                //清除定时器
+                clearInterval(timer);
+
+                //向下移动
+                timer = setInterval(function () {
+                  var top = parseFloat(getComputedStyle(shopcart).top);
+                  if (top >= 0) {
+                    clearInterval(timer);
+                    timer = null;
+                  } else {
+                    var t = Math.random() * 3;
+                    var t1 = top + t;
+                    t1 = t1 >= 0 ? 0 : t1;
+                    shopcart.style.top = t1 + 'px';
+                  }
+
+                }, 10)
+              } else {
+                //向上移动
+                shopcart.style.top = (top - 2) + 'px';
+              }
+            }, 10)
+          }
+
+          //将li添加到list
+          list.appendChild(li);
+        }
+
+
+      }
+
+
+      //初始化渲染数据
+      createLiForData(products);
+
+
+      //保存定时器序号的数组
+      var timers = [];
+
+      //判断有没有商品数据可加载
+      var isEmpty = false;
+
+      document.onscroll = function () {
+
+        //如果没有数据可加载，直接拦截
+        if (isEmpty) {
+          console.log('我是有底线');
+
+          return;
+        }
+
+        var timer = setTimeout(function () {
+          //保留第一定时器，清除其他定时器
+          for (var i = 1; i < timers.length; i++) {
+            clearTimeout(timers[i]);
+          }
+
+          //清除保存定时器序号的数组
+          timers = [];
+
+          //获取页面可视高度
+          var iw = innerHeight;
+          // console.log('iw ==> ', iw);
+
+          //获取滚动距离
+          var scrollY = pageYOffset;
+          // console.log('scrollY ==> ', scrollY);
+
+          //获取商品最后一个节点
+          var last = list.querySelector('li:last-child');
+          // console.log('last ==> ', last);
+
+          //获取商品最后一个节点
+          var height = parseFloat(getComputedStyle(last).height);
+          // console.log('height ==> ', height);
+
+          //获取商品最后一个节点距离页面顶部的距离
+          var offsetTop = last.offsetTop;
+          // console.log('offsetTop ==> ', offsetTop);
+
+          //距离最后一个商品节点100px左右，触发加载数据
+          if (iw + scrollY - height + 100 >= offsetTop) {
+            //每次截取8个商品
+            var data = allProducts.slice(start, start + 8);
+            start += 8;
+
+            //渲染商品数据
+            createLiForData(data);
+
+            if (data.length < 8) {
+              isEmpty = true;
+            }
+          }
+
+        }, 500)
+
+        timers.push(timer);
+      }
+
+    }
+
+  </script>
+</body>
+
+</html>
