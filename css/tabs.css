@@ -1,0 +1,24 @@
+.tabs{
+    position: fixed;
+    width: 100%;
+    background-color: #fff;
+    left: 0;
+    bottom: 0;
+    border-top: 1px solid #ddd;
+    box-shadow: 2px 2px 10px #555; 
+  }
+  
+  .tabs>.tab{
+    float: left;
+    width: 20%;
+    position: relative;
+    height: .8rem;
+  }
+  
+  .tabs>.tab>div{
+    width: 1rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
