@@ -1,0 +1,6 @@
+<!--pages/hwc/hwc.wxml-->
+<view>
+  <view><image src='{{src}}'></image></view>
+  <view><text class='center'>个人中心</text></view>
+  
+</view>

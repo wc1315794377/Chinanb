@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/swiper.min.css">
+    <link rel="stylesheet" href="../css/product-1.css">
+</head>
+
+<body>
+    <div class="product-1">
+        <div class="nav"> </div>
+
+        <div class="banner">
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <img class="auto-img" src="../images/product-0.png" alt="">
+                    </div>
+                    <div class="swiper-slide">
+                        <img class="auto-img" src="../images/product-1.png" alt="">
+                    </div>
+                    <div class="swiper-slide">
+                        <img class="auto-img" src="../images/product-2.png" alt="">
+                    </div>
+                    <div class="swiper-slide">
+                        <img class="auto-img" src="../images/product-3.png" alt="">
+                    </div>
+                    <div class="swiper-slide">
+                        <img class="auto-img" src="../images/product-4.png" alt="">
+                    </div>
+
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+        </div>
+
+        <div class="main">
+            <div class="top clearfix">
+                <div class="price">
+                    <p>￥258.00</p>
+                </div>
+                <div class="title">
+                    <span>【视频看货 进口机芯】雷炫(LOSIAN)手表男士超薄防水时尚简约休闲潮男表钢带男表玫黑钢带</span>
+                </div>
+                <div class="title-bot">
+                    <p>原装正品，假一赔十，三年质保，放心抢购,全场直降低价，满300再减30元，买贵退差,关注店铺抢京豆+京券，下单更省，可货到付款，可代写贺卡！ </p>
+                </div>
+                <div class="fxg clearfix">
+                    <div class="jdfxg fl">
+                        <img class="auto-img" src="../images/jdfxg.png" alt="">
+                    </div>
+                    <div class="purple">
+                        <p>送运费险·闪电退款·极速审核</p>
+                    </div>
+                </div>
+                <div class="fh">
+                    <div class="yh clearfix">
+                        <p class="yhtext fl">优惠</p>
+                    </div>
+                    <div class="yh-right">
+                        <img class="auto-img fl" src="../images/yhq.png" alt=""></br></br>
+                        <p><span>满减</span>每满300元，可减30元现金</p></br>
+                        <p><span>限购</span>购买不超过100件时享受单件价￥188，超出数量以结算价为准，仅限购买一次</p>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
+    </div>
+
+    </div>
+
+
+    <script src="../js/jquery-3.4.1.min.js"></script>
+    <script src="../js/swiper.min.js"></script>
+
+    <script>
+        $(function () {
+            new Swiper('.swiper-container', {
+                //预览图片张数
+                slidesPerView: 1,
+                //图片与图片之间的间距
+                spaceBetween: 0,
+
+                //循环轮播
+                loop: false,
+
+                // autoplay: {
+                //     delay: 1000
+                // },
+
+                //索引
+                pagination: {
+                    el: '.swiper-pagination',
+
+                    //可以点击图片切换图片
+                    clickable: false,
+                }
+            });
+        })
+    </script>
+</body>
+
+</html>

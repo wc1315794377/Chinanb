@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="../css/writer.css" />
+</head>
+<body>
+
+	<div id="app" class="box">
+		<div class="left">
+			<div class="add">添加留言</div>
+		</div>
+		<div class="middle box-child">
+
+			<!-- 添加留言或者编辑留言显示此div -->
+			<div class="add-edit">
+				<div class="writer">
+					<input class="writer-name w1" type="text" name="writer" placeholder="留言者" autocomplete="off" />
+				</div>
+
+				<div class="writer w">
+					<input class="write-title w1" type="text" name="writeTitle" placeholder="留言标题" autocomplete="off" />
+				</div>
+
+				<div class="writer w">
+					<textarea class="write-content w1" placeholder="留言内容" name="writeContent"></textarea>
+				</div>
+
+				<div class="submit">提交</div>
+			</div>	
+
+			<!-- 查看留言显示此div -->
+			<div class="reading">
+				<div id="writeDate" class="time"></div>
+				<div class="w author">留言者：<span id="writer"></span></div>
+				<div class="title">标题：<span id="writeTitle"></span></div>
+				<div class="w author author-content">
+					<div>留言内容：</div>
+					<div id="writeContent" class="main"></div>
+				</div>
+			</div>
+		</div>
+		
+		<div class="right box-child">
+		</div>
+	</div>
+
+	<script src="../js/format.js"></script>
+	<script src="../js/write.js"></script>
+	<script>
+	
+		window.onload = function () {
+
+			var addMessage = new AddMessage();
+			addMessage.init();
+
+		}	
+
+	</script>
+</body>
+</html>

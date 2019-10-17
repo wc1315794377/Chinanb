@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no,maximum-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/iconfont.css" />
+    <link rel="stylesheet" href="./css/index.css">
+    <title>天气</title>
+</head>
+<body>
+
+    <div class="weather">
+        <div class="weather-bg"></div>
+        <div class="weather-box">
+            <div class="nav">
+                <div class="location-icon fl"></div>
+                <div class="location-city fl"></div>
+                <div class="serach fl">
+                    <input class="search-text fl" type="text">
+                    <span class="search-icon fl search-city"></span>
+                </div>
+            </div>
+            <div class="now-box">
+                <div class="now-weather">
+                        <div class="f18 weather-status"></div>
+                        <div class="wind-status"></div>
+                        <div><span class="f70 tmp"></span><span class="f12 min-max-tmp"></span></div>
+                        <div><span  class="f14 day"></span><span class="f12 date"></span></div>
+                </div>
+               <div class="today-weather">
+                   <div class="f14 title">24小时天气预报</div>
+                   <div class="hours">
+                       <ul class="list clearfix">
+                           
+                       </ul>
+                   </div>
+               </div>
+               <div class="future-weather today-weather">
+                    <div class="f14 title clearfix"><span class="fl">未来9天天气预报</span><span class="fr show-weather" name="0">展开</span></div>
+                    <ul class="fw">
+                    </ul>
+               </div>
+            </div>
+        </div>
+    </div>
+
+        <script src="./js/jquery-3.4.1.min.js"></script>
+        <script src="./js/index.js"></script>
+</body>
+</html>

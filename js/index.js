@@ -189,7 +189,7 @@ connection.listen({
 
       var str = `<div class="other-content fl clearfix">
               <div class="avatar fl">
-                <img class="auto-img" src="./images/bb.jpg" alt="" />
+                <img class="auto-img" src="../images/bb.jpg" alt="" />
               </div>
               <div class="fl bubble l-bubble">
                 <i class="caret l-caret"></i>
@@ -262,7 +262,7 @@ function addFriendListEvent() {
 
             var str = id == msgData[j].id ? `<div class="other-content fl clearfix">
             <div class="avatar fl">
-              <img class="auto-img" src="./images/bb.jpg" alt="" />
+              <img class="auto-img" src="../images/bb.jpg" alt="" />
             </div>
             <div class="fl bubble l-bubble">
               <i class="caret l-caret"></i>
@@ -274,7 +274,7 @@ function addFriendListEvent() {
             ${msgData[j].msg}
           </div>
           <div class="avatar fl">
-            <img class="auto-img" src="./images/bb.jpg" alt="" />
+            <img class="auto-img" src="../images/bb.jpg" alt="" />
           </div>
         </div>`;
 
@@ -306,7 +306,7 @@ function createFriedList(rosterName) {
   li.dataset.id = rosterName;
   var str = `<i class="line"></i>
             <div class="user-img fl">
-              <img class="auto-img" src="./images/bb.jpg" alt="">
+              <img class="auto-img" src="../images/bb.jpg" alt="">
             </div>
             <div class="fl user-text">
               <div class="user-name one-text">${rosterName}</div>
@@ -329,12 +329,12 @@ window.onload = function () {
     var fragment = document.createDocumentFragment();
     for (var i = 1; i <= faces; i++) {
       var li = document.createElement('li');
-      li.dataset.face = './images/face/ee_' + i + '.png';
+      li.dataset.face = '../images/face/ee_' + i + '.png';
 
       //创建图片对象
       var img = new Image();
       img.className = 'auto-img';
-      img.src = './images/face/ee_' + i + '.png';
+      img.src = '../images/face/ee_' + i + '.png';
 
       li.appendChild(img);
       fragment.appendChild(li);
@@ -564,7 +564,7 @@ window.onload = function () {
             ${sendMsg}
           </div>
           <div class="avatar fl">
-            <img class="auto-img" src="./images/bb.jpg" alt="" />
+            <img class="auto-img" src="../images/bb.jpg" alt="" />
           </div>
         </div>`;
 

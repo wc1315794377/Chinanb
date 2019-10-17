@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    body {
+      margin: 0;
+    }
+
+    input {
+      outline: none;
+    }
+
+    .produce-box .add-produce {
+      width: 300px;
+      border: 1px solid #000;
+      margin: 100px auto 0;
+      padding: 20px;
+    }
+
+    .add-produce h3 {
+      text-align: center;
+    }
+
+    .data .name input,
+    .plus-money input,
+    .money input {
+      width: calc(100% - 20px);
+      padding: 0 10px;
+      height: 35px;
+      font-size: 17px;
+      border: 1px solid #000;
+
+    }
+
+    .protuce-img input {
+      display: block;
+      width: calc(100% - 20px);
+      height: 35px;
+      padding: 0 10px;
+      font-size: 17px;
+      border: 1px solid #000;
+    }
+
+    .data div {
+      margin: 15px 0;
+    }
+
+    .select select {
+      width: 100%;
+      height: 30px;
+      outline: none;
+    }
+
+    .btn input {
+      width: 100%;
+      height: 35px;
+      background: #e4393c;
+      border: none;
+      font-size: 20px;
+      color: #fff;
+    }
+
+    .plus-money {
+      display: none;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="produce-box">
+    <!-- 录入商品 -->
+    <div class="add-produce">
+      <h3>录入商品数据</h3>
+      <div class="data">
+        <div class="name">
+          <input id="name" type="text" name="title" placeholder="商品名称" />
+        </div>
+        <div id="img" class="protuce-img"><input type="text" placeholder="商品链接" name="img"></div>
+        <div class="radio">
+          <span><input name="a" type="radio" value="满减" data-index="0" />满减</span>
+          <span><input name="a" type="radio" value="劵" data-index="1" />劵</span>
+          <span><input name="a" type="radio" checked value="" data-index="2" />无</span>
+        </div>
+        <div class="plus"><input class="plus plus-check" type="checkbox" />plus会员</div>
+        <div class="plus-money"><input type="text" placeholder="plus会员优惠价格" /></div>
+        <div class="money"><input type="text" placeholder="价格" /></div>
+        <div class="select">
+          <select class="sel">
+            <option>商品类型</option>
+          </select>
+        </div>
+        <div class="btn"><input type="button" value="提&nbsp;&nbsp;交"></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="../js/products1.js"></script>
+  <script src="../js/jquery-3.4.1.min.js"></script>
+  <script>
+
+    // $.each([2, 8, 9], function (i, v) {
+    //   console.log('i ==> ', i)
+    //   console.log('v ==> ', v)
+    //   console.log(this);
+    // })
+
+    function AddProduct($) {
+      this.$ = $;
+    }
+
+    AddProduct.fn = AddProduct.prototype;
+
+    //初始化类型列表
+    AddProduct.fn.initTypeList = function (types, selector) {
+      //types: 商品类型
+      //selector: 列表选择器
+      var vm = this;
+      var $fragment = this.$(document.createDocumentFragment());
+      this.$.each(types, function () {
+        var $option = vm.$('<option value="' + this.type + '">' + this.title + '</option>')
+        $fragment.append($option)
+      })
+
+      this.$(selector).append($fragment);
+    }
+
+    AddProduct.fn.init = function (types, selector) {
+      this.initTypeList(types, selector);
+    }
+
+    $(function () {
+      new AddProduct($).init(types, '.sel');
+
+      //记录单选
+      var radioIndex = 2;
+
+      //切换隐藏plus
+      $('.plus-check').on({
+        change: function () {
+
+
+          var $a = $('[name="a"]');
+
+          if ($(this).prop('checked')) {
+            //保留上一选中单选的下标
+            //获取自定义属性 data(自定义属性名)
+            //获取自定义属性 data(自定义属性名, 自定义属性值)
+            radioIndex = $('[name="a"]:checked').data('index');
+            console.log('radioIndex ==> ', radioIndex);
+
+            //下拉
+            $('.plus-money').slideDown(150);
+            $a.eq(2).prop('checked', true).end().prop('disabled', true);
+          } else {
+            //上拉
+            $('.plus-money').slideUp(150);
+            $a.prop('disabled', false).eq(radioIndex).prop('checked', true);
+          }
+        }
+      })
+
+    })
+
+  </script>
+</body>
+
+</html>
