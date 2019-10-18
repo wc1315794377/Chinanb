@@ -7,7 +7,7 @@ $(function () {
         var id = $liActive.data('id');
         $.ajax({
             type: 'GET',
-            url: 'http://www.arthurdon.top:3000/lyric?id=' + id,
+            url: 'http://www.arthurdon.top:100099/lyric?id=' + id,
             success: function (data) {
                 $('.words-box').css({top: wordsBoxTop + 'px'}).empty();
                 var lyric = data.lrc.lyric.split(/[\n\r]+/);
@@ -140,7 +140,7 @@ $(function () {
     } else {
         $.ajax({
             type: 'GET',
-            url: 'http://www.arthurdon.top:3000/top/list?idx=1',
+            url: 'http://www.arthurdon.top:100099/top/list?idx=1',
             success: function (data) {
                 localStorage.setItem('songs', JSON.stringify(data))
                 songsDetail = data.playlist.tracks.concat();
