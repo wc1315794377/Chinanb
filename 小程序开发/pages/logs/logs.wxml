@@ -1,4 +1,0 @@
-<!--logs.wxml-->
-<view class="container log-list">
-    <button bindtap='center'>我是通讯录</button>
-</view>
