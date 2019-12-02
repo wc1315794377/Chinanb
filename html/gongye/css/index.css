@@ -1,0 +1,353 @@
+.box{
+    background: #EFF8FF;
+}
+
+.wel{
+    text-align: center;
+    color: #ffffff;
+}
+
+.wel-text{
+    height: .5rem;
+    text-align: left;
+    line-height: .5rem;
+    background-color: #1F97E5;
+    padding: 0 15%;
+}
+
+.top-img{
+    display: block;
+    width: calc(100% - 30%);
+    padding: 0 15%;
+}
+
+.top-nav{
+    background-color: #1F97E5;
+    display: flex;
+    height: .8rem;
+    font-size: .25rem !important;
+    font-weight: bold;
+    padding: 0 15%;
+}
+
+.top-nav>div{
+    display: block;
+    flex: 1;
+    float: left;
+    color: #ffffff;
+    text-align: center;
+    cursor: pointer;
+    line-height: .8rem;
+}
+
+.top-nav>div:hover{
+    background-color: #ffffff;
+    color: #1F97E5;
+    transition: all .5s linear;
+}
+
+.banner{
+    position: relative;
+    overflow: hidden;
+}
+
+.nav-main{
+    width: 100%;
+}
+
+.point{
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+}
+
+.content{
+    margin: 0 auto;
+    padding: 0 15%;
+}
+
+.bg{
+    width: 1520px;
+    height: 267px;
+    background: url("../image/bg.jpg") no-repeat center;
+    display: none;
+}
+
+table{
+    margin: .5rem auto;
+}
+
+.title{
+    font-size: .5rem;
+    font-weight: bold;
+    color: #1F97E5;
+    text-align: center;
+}
+
+.item{
+    font-size: .35rem;
+    margin-top: .5rem;
+}
+
+.itemContent{
+    font-size: .3rem;
+}
+
+.specialistTitle>th{
+    font-size: .3rem;
+}
+
+.tbody>tr>:first-child{
+    font-size: .3rem;
+    font-weight: bold;
+    color: blue;
+}
+
+.schoolProfile,
+.schoolDynamics,
+.specialtyDepartment,
+.specialist,
+.campusOverview,
+.schoolEnterpriseCooperation,
+.contactUs{
+    width: 100%;
+    margin-top: .5rem;
+    line-height: .5rem;
+    padding: .5rem;
+    background: #ffffff;
+    display: none;
+}
+
+.footer_area{
+    width: calc(100% - 30%);
+    height: 5rem;
+    margin-top: .5rem;
+    padding: 0 15%;
+    background: #1F97E5;
+    color: #ffffff;
+}
+
+.f_nav>ul{
+    float: left;
+    padding: .5rem 1rem .5rem 0;
+}
+
+.f_code{
+    padding-top: .5rem;
+}
+
+ul>h3{
+    font-size: .3rem;
+    line-height: .8rem;
+}
+
+ul>li{
+    line-height: .6rem;
+}
+
+li>a{
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.code>p{
+    line-height: .6rem;
+    font-family: '楷体';
+    font-size: .4rem;
+    text-align: center;
+}
+
+.line{
+    border-bottom: 1px solid #ffffff;
+}
+
+.f_bottom{
+    color: #ffffff;
+    background-color: #0089C5;
+    height: .5rem;
+    line-height: .5rem;
+    padding: 0 15%;
+}
+
+.botomText{
+    color: rgb(199, 199, 199);
+    text-decoration: none;
+}
+
+.botomText:hover{
+    color: #ffffff;
+}
+
+.business{
+    padding: .2rem 0;
+}
+
+.nav2{
+    position: relative;
+}
+  
+.nav2>.business1{
+  position: absolute;
+  left: 0;
+  top: .8rem;
+  width: 100%;
+  background-color: #fff;
+  box-shadow: 0px 0px 12px 1px #ddd;
+  display: none;
+  z-index: 9;
+}
+
+.nav2:hover .business{
+  display: block;
+}
+
+.nav3{
+  position: relative;
+}
+
+.nav3>a{
+    text-decoration: none;
+    color: #fff;
+}
+
+.nav3>a:hover{
+    color: #1F97E5;
+    background-color: #ffffff;
+}
+  
+.nav3>.business2{
+  position: absolute;
+  left: 0;
+  top: .8rem;
+  width: 100%;
+  background-color: #fff;
+  box-shadow: 0px 0px 12px 1px #ddd;
+  display: none;
+  z-index: 9;
+}
+
+.nav3:hover .business{
+  display: block;
+}
+
+.nav4{
+  position: relative;
+}
+  
+.nav4>.business3{
+  position: absolute;
+  left: 0;
+  top: .8rem;
+  width: 100%;
+  background-color: #fff;
+  box-shadow: 0px 0px 12px 1px #ddd;
+  display: none;
+  z-index: 9;
+}
+
+.nav4:hover .business{
+  display: block;
+}
+
+.nav5{
+    position: relative;
+}
+  
+.nav5>.business4{
+  position: absolute;
+  left: -14px;
+  top: .8rem;
+  width: 3rem;
+  background-color: #fff;
+  box-shadow: 0px 0px 12px 1px #ddd;
+  display: none;
+  z-index: 9;
+  padding: 0;
+}
+
+.business4>li{
+    font-size: .22rem;
+}
+
+.business4>.big{
+    font-size: .3rem;
+    margin-top: .2rem;
+}
+
+.nav5:hover .business{
+  display: block;
+}
+
+.nav6{
+    position: relative;
+}
+  
+.nav6>.business5{
+  position: absolute;
+  left: 0;
+  top: .8rem;
+  width: 100%;
+  background-color: #fff;
+  box-shadow: 0px 0px 12px 1px #ddd;
+  display: none;
+  z-index: 9;
+}
+
+.nav6:hover .business{
+  display: block;
+}
+
+.nav7{
+    position: relative;
+}
+  
+.nav7>.business6{
+  position: absolute;
+  left: 0;
+  top: .8rem;
+  width: 100%;
+  background-color: #fff;
+  box-shadow: 0px 0px 12px 1px #ddd;
+  display: none;
+  z-index: 9;
+}
+
+.nav7:hover .business{
+  display: block;
+}
+
+.business>li{
+  color: #a51421;
+  line-height: 30px;
+  text-align: center;
+}
+
+.business>li:hover{
+  color: #1F97E5;
+}
+
+.specialty{
+    margin: .2rem 0;
+}
+
+
+
+/* 适配超大PC */
+@media screen and (min-width:1200px) {
+
+}
+
+/* 适配普通PC */
+@media screen and (min-width:768px) and (max-width:1200px) {
+
+}
+
+/* 适配平板 */
+@media screen and (min-width:475px) and (max-width:768px) {
+
+}
+
+/* 适配手机 */
+@media screen and (max-width:475px) {
+
+}
